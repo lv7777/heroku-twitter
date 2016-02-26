@@ -8,13 +8,12 @@ var passport = require('passport')
 
 var express = require('express');
 var app = express();
-    app.use(passport.initialize());
-    
- app.use(express.cookieParser()); // read cookies (needed for auth)
+  app.use(express.cookieParser()); // read cookies (needed for auth)
   app.use(express.bodyParser()); // get information from html forms
-  
-  app.use(passport.session());
-  app.use(app.router);
+  // required for passport
+  app.use(express.session({ secret: 'SECRET' })); // session secret
+  app.use(passport.initialize());
+  app.use(passport.session()); // persistent login sessions
   
   
 app.set('port', (process.env.PORT || 5000));
