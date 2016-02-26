@@ -8,5 +8,5 @@ app.get('/', function (req, res) {
  
 //以下、ルーティング情報があればここに追記していく
  
-app.listen(3000);
+app.listen(80);
 console.log('Server running at http://localhost:3000/');
