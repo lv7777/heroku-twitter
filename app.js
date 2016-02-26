@@ -4,6 +4,29 @@ var passport = require('passport');
 var passport = require('passport')
   , TwitterStrategy = require('passport-twitter').Strategy;
   
+
+
+var express = require('express');
+var app = express();
+ app.use(express.cookieParser()); // read cookies (needed for auth)
+  app.use(express.bodyParser()); // get information from html forms
+  
+    app.use(passport.initialize());
+  app.use(passport.session());
+  app.use(app.router);
+  
+  
+app.set('port', (process.env.PORT || 5000));
+
+ app.use(express.static(__dirname));
+
+// // views is directory for all template files
+ app.set('views', __dirname);
+// app.set('view engine', 'ejs');
+
+app.set('view engine', 'html');
+
+
 passport.serializeUser(function (user, done) {
     done(null, user);
 });
@@ -27,20 +50,6 @@ passport.use(new TwitterStrategy({
         });
     }
 ));
-
-
-var express = require('express');
-var app = express();
-
-app.set('port', (process.env.PORT || 5000));
-
- app.use(express.static(__dirname));
-
-// // views is directory for all template files
- app.set('views', __dirname);
-// app.set('view engine', 'ejs');
-
-app.set('view engine', 'html');
 
 
 app.get('/', function(request, response) {
