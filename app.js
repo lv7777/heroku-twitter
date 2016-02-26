@@ -8,10 +8,11 @@ var passport = require('passport')
 
 var express = require('express');
 var app = express();
+    app.use(passport.initialize());
+    
  app.use(express.cookieParser()); // read cookies (needed for auth)
   app.use(express.bodyParser()); // get information from html forms
   
-    app.use(passport.initialize());
   app.use(passport.session());
   app.use(app.router);
   
