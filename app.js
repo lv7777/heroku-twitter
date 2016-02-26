@@ -1,5 +1,5 @@
 var passport = require('passport');
-var session = require('express-session'); app.use(session({ secret: 'SECRET' }));
+var session = require('express-session'); 
 
 // モジュールロード
 // passport-twitterモジュールを事前にnpm installしておく必要があります。
@@ -10,12 +10,13 @@ var passport = require('passport')
 
 var express = require('express');
 var app = express();
+app.use(session({ secret: 'SECRET' }));
 //   app.use(express.cookieParser()); // read cookies (needed for auth)
 //   app.use(express.bodyParser()); // get information from html forms
 //   // required for passport
 //   app.use(express.session({ secret: 'SECRET' })); // session secret
-//   app.use(passport.initialize());
-//   app.use(passport.session()); // persistent login sessions
+  app.use(passport.initialize());
+  app.use(passport.session()); // persistent login sessions
   
   
 app.set('port', (process.env.PORT || 5000));
