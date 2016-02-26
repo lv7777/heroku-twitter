@@ -3,7 +3,7 @@
     "version": "0.1.5",
   "dependencies": {
         "express": "4.13.4",
-        "express-session":"*",
+        "express-session":"1.13.0",
         "passport": "0.3.2",
         "passport-twitter": "1.0.4"
   },
