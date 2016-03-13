@@ -1,0 +1,11 @@
+<h1> <%= test1 %> </h1>  <!-- グローバルオブジェクトのプロパティとして参照可能 -->
+<h1> <%= test2 %> </h1>  <!-- グローバルオブジェクトのプロパティとして参照可能 -->
+<h1> <%= test3 %> </h1>  <!-- グローバルオブジェクトのプロパティとして参照可能 -->
+<h1> <%= settings.test3 %> </h1>  <!-- settingsオブジェクトのプロパティとして参照可能 -->
+
+<!-- 以下のように出力される
+<h1>exposed via res.render</h1>
+<h1>exposed via res.local</h1>
+<h1>exposed via app.local</h1>
+<h1>exposed via app.set</h1>
+-->
