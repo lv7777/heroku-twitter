@@ -1,2 +1,2 @@
 # ディレクトリはコミットするけどファイルはignore
-passwd/**/* 
+passward/**/* 
