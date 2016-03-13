@@ -1,4 +1,4 @@
 # ディレクトリはコミットするけどファイルはignore
-# passward/**/* 
+passward/**/* 
 # できないので通常の方法でやるか
-passward/
+# passward/
